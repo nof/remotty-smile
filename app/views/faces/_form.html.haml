@@ -1,0 +1,10 @@
+= simple_form_for(@face) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :user
+    = f.input :image
+    = f.input :smile
+
+  .form-actions
+    = f.button :submit

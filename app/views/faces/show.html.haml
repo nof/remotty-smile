@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @face.user
+%p
+  %b Image:
+  = @face.image
+%p
+  %b Smile:
+  = @face.smile
+
+= link_to 'Edit', edit_face_path(@face)
+\|
+= link_to 'Back', faces_path

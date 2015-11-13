@@ -1,0 +1,25 @@
+%h1 Listing faces
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Image
+      %th Smile
+      %th
+      %th
+      %th
+
+  %tbody
+    - @faces.each do |face|
+      %tr
+        %td= face.user
+        %td= face.image
+        %td= face.smile
+        %td= link_to 'Show', face
+        %td= link_to 'Edit', edit_face_path(face)
+        %td= link_to 'Destroy', face, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Face', new_face_path
