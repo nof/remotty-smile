@@ -15,4 +15,9 @@ class User < ActiveRecord::Base
     user
   end
 
+  def same_room_snapshots
+    parsed = Remotty.access_token(self.token).get('/api/v1/rooms/snapshots').parsed
+    parsed['participations'].map {|participation| OpenStruct.new(participation) }
+  end
+
 end
