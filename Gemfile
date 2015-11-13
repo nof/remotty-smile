@@ -16,6 +16,7 @@ gem 'remotty', git: 'https://github.com/SonicGarden/remotty-ruby-client'
 gem 'carrierwave'
 gem 'fog'
 gem 'responders'
+gem 'rest-client'
 group :development do
   gem 'better_errors'
   gem 'html2haml'
