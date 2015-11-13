@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
   def self.get_current_faces
     User.find_each do |user|
-      before_best_face = user.faces.last
+      before_best_face = user.faces.last || Face.new(smile: 0)
 
       face = user.faces.new
       face.remote_image_url = user.same_room_snapshots.select{|struct| struct.user_id == user.uid.to_i }.first.snapshot_url
