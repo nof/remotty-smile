@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113030538) do
+ActiveRecord::Schema.define(version: 20151113063002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20151113030538) do
   create_table "faces", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "image"
-    t.integer  "smile"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.float    "smile",      default: 0.0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "faces", ["user_id"], name: "index_faces_on_user_id", using: :btree
