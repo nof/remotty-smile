@@ -3,7 +3,7 @@ module Api::V1
     respond_to :json
 
     def show
-      @users = User.where(room_key: params[:room_id])
+      @users = User.where(room_key: params[:id])
     end
   end
 end
