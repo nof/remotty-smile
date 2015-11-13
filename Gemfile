@@ -13,6 +13,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'omniauth-remotty', git: 'https://github.com/SonicGarden/omniauth-remotty'
 gem 'remotty', git: 'https://github.com/SonicGarden/remotty-ruby-client'
+gem 'responders'
 group :development do
   gem 'better_errors'
   gem 'html2haml'

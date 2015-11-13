@@ -4,5 +4,11 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure'
 
+  namespace :api do
+    namespace :v1 do
+      resources :best_shots, only: %i(show)
+    end
+  end
+
   root to: 'visitors#index'
 end
